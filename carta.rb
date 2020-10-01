@@ -17,3 +17,25 @@ class Carta
             raise ArgumentError, 'El numero no esta entre 1 y 13'
         end
         if !['C', 'D', 'E', 'T'].include?(pinta)
+            raise ArgumentError, 'No es la pinta amigx'
+        #@numero = numero
+        #@pinta = pinta
+        end
+    end
+    def self.numero
+        Random.rand(1..13)
+    end
+    def self.pinta
+    ['C', 'D', 'E', 'T'].sample
+    end
+end
+array = []
+5.times do
+    pinta1 = Carta.pinta
+    numero1 = Carta.numero
+    array.push Carta.new(numero1, pinta1)
+#puts array.inspect
+end
+#print array
+carta2 = Carta.new(18, 'u')
+print carta2
